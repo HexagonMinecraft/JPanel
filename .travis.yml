@@ -5,7 +5,7 @@ before_install:
   - gradle wrapper
 script:
   - gradle build
-  - mv build/libs/PanelPlugin-1.0-SNAPSHOT.jar JPanel-$TRAVIS_BUILD_NUMBER\-SNAPSHOT.jar
+  - mv build/libs/PanelPlugin-1.0-SNAPSHOT.jar JPanel-$TRAVIS_BUILD_NUMBER.jar
   - ls build/libs
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
@@ -17,4 +17,4 @@ cache:
 addons:
   artifacts:
     paths:
-    - build/libs/JPanel-$TRAVIS_BUILD_NUMBER-SNAPSHOT.jar
+    - build/libs/JPanel-$TRAVIS_BUILD_NUMBER.jar
