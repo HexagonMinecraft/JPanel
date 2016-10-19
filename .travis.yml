@@ -1,10 +1,11 @@
 language: java
+jdk:
+  - oraclejdk8
 before_install:
   - gradle wrapper
-
 script:
-  - jdk_switcher use oraclejdk8
   - gradle build
+  - mv build/libs/PanelPlugin-*-SNAPSHOT.jar JPanel-$TRAVIS_BUILD_NUMBER-SNAPSHOT.jar
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
   - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
@@ -15,4 +16,4 @@ cache:
 addons:
   artifacts:
     paths:
-    - $HOME/bin/*
+    - build/libs/JPanel-$TRAVIS_BUILD_NUMBER-SNAPSHOT.jar
