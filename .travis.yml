@@ -3,6 +3,7 @@ before_install:
   - gradle wrapper
 
 script:
+  - jdk_switcher use oraclejdk8
   - gradle build
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
