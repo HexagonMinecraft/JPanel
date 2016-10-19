@@ -5,7 +5,7 @@ before_install:
   - gradle wrapper
 script:
   - gradle build
-  - mv build/libs/PanelPlugin-*-SNAPSHOT.jar JPanel-$TRAVIS_BUILD_NUMBER-SNAPSHOT.jar
+  - mv build/libs/PanelPlugin-1.0-SNAPSHOT.jar JPanel-$TRAVIS_BUILD_NUMBER\-SNAPSHOT.jar
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
   - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
