@@ -1,4 +1,6 @@
 # JPanel
+[![Build Status](https://ci.nprail.me/buildStatus/icon?job=JPanel&build=8)](https://ci.nprail.me/job/JPanel/8/)
+
 A plugin based control panel for Bukkit / Spigot http://dev.bukkit.org/bukkit-plugins/jpanel/
 ![Screenshot](http://dev.bukkit.org/media/images/84/90/Screenshot_from_2015-06-25_16-13-15.png)
 
