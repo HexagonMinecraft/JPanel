@@ -7,8 +7,8 @@
     {{#if dark}}
 	<link rel="stylesheet" href="/dark.css"> 
     {{/if}}
-	<link rel="stylesheet" href="/scrollbar.css">
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 	{{#if dark == false}}
 	<link rel="manifest" href="/manifest.json">
@@ -25,37 +25,43 @@
 
 	{{{ header }}}
 
-	<main>
-		<div class="container">
-			<div class="page-content">
-				<h4>Terminal</h4>
+<main>
+    <div class="container">
+        <div id="error-bar">
+
+        </div>
+        <div class="page-content">
+            <h2>Terminal</h2>
 
 				<div id="term" class="nano">
 					<div id="term-content" class="nano-content"></div>
 				</div>
 
-				<form id="cmd_form">
-					<div class="input-field col s12">
-						<i class="material-icons prefix">chevron_right</i>
-						<input id="cmd_box" autocapitalize="off" autocorrect="off" autocomplete="off" placeholder="Execute a command..." type="text"
-							class="validate">
-					</div>
-				</form>
-			</div>
-			<div class="sidebar">
-				<h4>Server Stats</h4>
+            <form id="cmd_form">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">chevron_right</i>
+                    <input id="cmd_box"
+                           autocapitalize="off"
+                           autocorrect="off"
+                           autocomplete="off"
+                           placeholder="Execute a command..." type="text" class="validate">
+                </div>
+            </form>
+        </div>
+        <div class="sidebar">
+            <h2>Server Stats</h2>
 
-				<h5>CPU Usage</h5>
-				<p id="cpu-text">loading...</p>
-				<progress id="cpu"></progress>
+            <h3>CPU Usage</h3>
+            <p id="cpu-text">loading...</p>
+            <progress id="cpu"></progress>
 
-				<h5>RAM Usage</h5>
-				<p id="ram-text">loading...</p>
-				<progress id="ram"></progress>
+            <h3>RAM Usage</h3>
+            <p id="ram-text">loading...</p>
+            <progress id="ram"></progress>
 
-				<h5>Server TPS</h5>
-				<p id="tps-text">loading...</p>
-				<progress id="tps"></progress>
+            <h3>Server TPS</h3>
+            <p id="tps-text">loading...</p>
+            <progress id="tps"></progress>
 
 			</div>
 		</div>
@@ -75,22 +81,9 @@
 	<!--Import jQuery before materialize.js-->
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
-	<script type="text/javascript" src="/scrollbar.js"></script>
-	<script type="text/javascript" src="/index.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/js/materialize.min.js"></script>
+<script type="text/javascript" src="/index.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/js/materialize.min.js"></script>
 
-
-	<script>
-    $(document).ready(function () {
-        $(".button-collapse").sideNav();
-    });
-     if ('serviceWorker' in navigator) {
-    navigator.serviceWorker
-             .register('./service-worker.js')
-             .then(function() { console.log('Service Worker Registered'); });
-  }
-
-</script>
 
 </body>
 
