@@ -282,6 +282,7 @@ $("#upload-btn").change(function(){
 		success: function () {
 			$('#upload-btn-label').text("Upload File");
 			alert("File uploaded");
+            loadCurrentDir();
 		},
 		// Form data
 		data: formData,
@@ -300,6 +301,10 @@ function openFile(file) {
         url: "/file/" + currentFile,
         success: function (result) {
             $("#save-btn").show();
+            $("#masterColumn").addClass("sidebar");
+
+            $("#detailColumn").removeClass("hidden");
+            $("#detailColumn").addClass("page-content");
 
 			if (editor || isMobile.any) {
 				editor.setValue(result);
@@ -346,6 +351,14 @@ function saveFile() {
 			header.show();
 		}
     });
+}
+
+function closeFile() {
+    $("#masterColumn").removeClass("sidebar");
+
+    $("#detailColumn").addClass("hidden");
+    $("#detailColumn").removeClass("page-content");
+
 }
 
 // Simple JavaScript Templating
