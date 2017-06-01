@@ -2,3 +2,9 @@
 build
 .idea
 libs
+.settings/
+.vscode/
+bin/
+.project
+.classpath
+test-server/
